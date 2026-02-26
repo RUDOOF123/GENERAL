@@ -1,0 +1,274 @@
+:root {
+  --glass-bg: rgba(14, 24, 30, 0.68);
+  --glass-border: rgba(42, 77, 73, 0.7);
+  --highlight: #4f9c96;
+  --text: #f2f7f6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--text);
+  overflow: hidden;
+}
+
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 20% 10%, #3f7b5b, #18332b 55%, #0e1717),
+    linear-gradient(115deg, #294837, #19322a 40%, #131f25 80%);
+  filter: blur(1px) saturate(120%);
+  transform: scale(1.02);
+  z-index: -2;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.22);
+  z-index: -1;
+}
+
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+}
+
+.top-search {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.search-box {
+  width: min(420px, 76vw);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid #2f454f;
+  background: rgba(8, 20, 27, 0.75);
+}
+
+.search-box input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #dbe8e7;
+  font-size: 1rem;
+}
+
+.left-menu {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 245px;
+  padding: 10px;
+}
+
+.left-menu h1 {
+  margin: 0 0 8px;
+  font-family: "Baloo 2", cursive;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 2rem;
+  color: #aff8f4;
+  text-shadow: 0 0 8px rgba(83, 211, 193, 0.8);
+}
+
+.left-menu nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.left-menu button {
+  background: transparent;
+  color: #f3f6f6;
+  border: 0;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 1.08rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.left-menu button:hover,
+.left-menu .active {
+  background: rgba(86, 149, 139, 0.55);
+}
+
+.right-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 340px;
+  padding: 14px;
+}
+
+.logos {
+  display: flex;
+  gap: 16px;
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.logo.red { color: #e94034; }
+.logo.orange { color: #f68c21; }
+.logo.blue { color: #3594ec; }
+
+.right-badge p {
+  margin: 6px 0;
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.right-badge strong { color: #38f95c; }
+
+.center-area {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 460px;
+}
+
+.panel,
+.downloads {
+  padding: 12px;
+}
+
+.panel h2,
+.downloads h2 {
+  margin: 0 0 10px;
+  font-size: 2rem;
+}
+
+.panel ul {
+  max-height: 445px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  border: 1px solid #2d484a;
+  border-radius: 9px;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.panel li {
+  font-size: 1.68rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.panel span {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 0.78rem;
+  padding: 2px 6px;
+  border-radius: 5px;
+  color: #cdfef8;
+  border: 1px solid #4f7d74;
+}
+
+.downloads {
+  margin-top: 14px;
+}
+
+.downloads button {
+  width: 100%;
+  border: 0;
+  border-radius: 6px;
+  padding: 11px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #d8f7f5;
+  background: rgba(94, 165, 161, 0.55);
+}
+
+.right-ad {
+  position: absolute;
+  right: 18px;
+  bottom: 90px;
+  width: 190px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 16px 10px;
+  background: linear-gradient(180deg, #5d5daa, #3b3f6f);
+}
+
+.right-ad h3 {
+  margin: 0;
+  font-size: 2.35rem;
+  line-height: 0.9;
+}
+
+.right-ad p {
+  margin: 10px 0 0;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.right-ad .size { font-size: 2.4rem; }
+
+footer {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+}
+
+footer p {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(239, 244, 244, 0.8);
+}
+
+.socials,
+.controls {
+  display: flex;
+  gap: 12px;
+}
+
+.controls span {
+  border: 1px solid #3f6560;
+  border-radius: 8px;
+  background: rgba(8, 21, 29, 0.75);
+  width: 52px;
+  text-align: center;
+}
+
+@media (max-width: 1200px) {
+  body { overflow: auto; }
+  .right-badge,
+  .right-ad,
+  .left-menu,
+  .center-area,
+  .top-search {
+    position: static;
+    transform: none;
+    width: min(94vw, 700px);
+    margin: 12px auto;
+  }
+
+  footer {
+    position: static;
+    margin: 16px;
+  }
+}
